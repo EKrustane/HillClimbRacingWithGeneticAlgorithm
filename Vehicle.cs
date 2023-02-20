@@ -17,10 +17,10 @@ namespace HillClimbRacingWithGeneticAlgorithm
 
         private void InitializeVehicle()
         {
-     
-            this.Image = (Image)Properties.Resources.ResourceManager.GetObject("vehicle");
+            string v = "vehicle";
+            this.Image = (Image)Properties.Resources.ResourceManager.GetObject(v);
             this.SizeMode = PictureBoxSizeMode.StretchImage;
-            this.Location = new Point(200, 200);
+            this.Location = new Point(100, 100);
             this.Name = "Car";
         }
     }
