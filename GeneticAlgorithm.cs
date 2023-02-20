@@ -8,5 +8,9 @@ namespace HillClimbRacingWithGeneticAlgorithm
 {
     class GeneticAlgorithm
     {
+        public GeneticAlgorithm()
+        {
+
+        }
     }
 }

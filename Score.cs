@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace HillClimbRacingWithGeneticAlgorithm
 {
-    class Score
+    public class Score
     {
+        public Score()
+        {
+
+        }
     }
 }
