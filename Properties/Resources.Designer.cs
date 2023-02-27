@@ -63,6 +63,16 @@ namespace HillClimbRacingWithGeneticAlgorithm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap start_pic {
+            get {
+                object obj = ResourceManager.GetObject("start_pic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap vehicle {
             get {
                 object obj = ResourceManager.GetObject("vehicle", resourceCulture);
