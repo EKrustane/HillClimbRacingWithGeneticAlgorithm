@@ -21,6 +21,7 @@ namespace HillClimbRacingWithGeneticAlgorithm
             this.Image = (Image)Properties.Resources.ResourceManager.GetObject(v);
             this.SizeMode = PictureBoxSizeMode.StretchImage;
             this.Location = new Point(100, 100);
+            this.BackColor = Color.Transparent;
             this.Name = "Car";
         }
     }

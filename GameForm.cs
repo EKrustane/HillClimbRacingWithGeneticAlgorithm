@@ -34,24 +34,12 @@ namespace HillClimbRacingWithGeneticAlgorithm
             //adjust game form size
             this.Size = new Size(800, 530);
 
+            //add start picture
             InitializeStartPicture();
 
-            //add key down event handler
-            //this.KeyDown += Game_KeyDown;
+            //add game elements, when Start button is clicked
+            AddGameElements();
 
-            //inicialize and add area
-            AddArea();
-
-            //adding vehicle to the game
-            AddVehicle();
-
-            //adding score to the game
-            AddScore();
-
-            //adding GA to the game
-            AddGeneticAlgorithm();
-
-            //UpdateScoreLabel();
         }
 
         private void InitializeStartPicture()
@@ -86,9 +74,30 @@ namespace HillClimbRacingWithGeneticAlgorithm
             startPicture.Visible = false;
         }
 
+        private void AddGameElements()
+        {
+            //add key down event handler
+            //this.KeyDown += Game_KeyDown;
+
+            //inicialize and add area
+            AddArea();
+
+            //adding vehicle to the game
+            AddVehicle();
+
+            //adding score to the game
+            AddScore();
+
+            //adding GA to the game
+            AddGeneticAlgorithm();
+
+            //UpdateScoreLabel();
+        
+        }
+
         private void AddArea()
         {
-            //this.Controls.Add(area);
+            this.Controls.Add(area);
             //area.BringToFront();
         }
 
