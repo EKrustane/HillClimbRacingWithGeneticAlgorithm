@@ -164,7 +164,8 @@ namespace HillClimbRacingWithGeneticAlgorithm
 
         private void AddScore()
         {
-
+            this.Controls.Add(score);
+            score.BringToFront();
         }
 
         private void AddGeneticAlgorithm()
