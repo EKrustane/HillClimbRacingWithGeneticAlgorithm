@@ -22,6 +22,7 @@ namespace HillClimbRacingWithGeneticAlgorithm
         private Button buttonYes = new Button();
         private Button buttonNo = new Button();
         private bool buttonStartClick = false;
+        private Timer ifButtonIsClickedTimer = null;
 
         public GameForm()
         {
@@ -38,7 +39,7 @@ namespace HillClimbRacingWithGeneticAlgorithm
             InitializeStartPicture();
 
             //add game elements, when Start button is clicked
-            AddGameElements();
+            InitializeIfButtonIsClickedTimer();
 
         }
 
@@ -70,8 +71,32 @@ namespace HillClimbRacingWithGeneticAlgorithm
         private void buttonStart_Click(object sender, EventArgs e)
         {
             buttonStartClick = true;
-            buttonStart.Visible = false;
+        }
+
+        private void VisibleFalse()
+        {
             startPicture.Visible = false;
+            buttonStart.Visible = false;
+        }
+
+        private void InitializeIfButtonIsClickedTimer()
+        {
+
+            ifButtonIsClickedTimer = new Timer();
+            ifButtonIsClickedTimer.Tick += IfButtonIsClickedTimer_Tick;
+            ifButtonIsClickedTimer.Interval = 1;
+            ifButtonIsClickedTimer.Start();
+        }
+
+        private void IfButtonIsClickedTimer_Tick(object sender, EventArgs e)
+        {
+            if (buttonStartClick)
+            {
+                ifButtonIsClickedTimer.Stop();
+                VisibleFalse();
+                AddGameElements();
+            }
+
         }
 
         private void AddGameElements()
