@@ -22,9 +22,9 @@ namespace HillClimbRacingWithGeneticAlgorithm
             this.Size = new Size(800, 600);
             this.Location = new Point(0, 0);
             this.Name = "Sky";
-            this.Controls.Add(vehicle);
-            vehicle.BringToFront();
-            vehicle.Location = new Point(140, 100);
+            //this.Controls.Add(vehicle);
+            //vehicle.BringToFront();
+            //vehicle.Location = new Point(140, 100);
 
         }
 

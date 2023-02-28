@@ -23,6 +23,8 @@ namespace HillClimbRacingWithGeneticAlgorithm
         private Button buttonNo = new Button();
         private bool buttonStartClick = false;
         private Timer ifButtonIsClickedTimer = null;
+        private Timer gravityTimer = null;
+        private int groundValue = 500;
 
         public GameForm()
         {
@@ -40,6 +42,8 @@ namespace HillClimbRacingWithGeneticAlgorithm
 
             //add game elements, when Start button is clicked
             InitializeIfButtonIsClickedTimer();
+
+            
 
         }
 
@@ -77,6 +81,30 @@ namespace HillClimbRacingWithGeneticAlgorithm
         {
             startPicture.Visible = false;
             buttonStart.Visible = false;
+        }
+
+        private void Gravity()
+        {
+            InitializeGravityTimer();
+        }
+
+        private void InitializeGravityTimer()
+        {
+            gravityTimer = new Timer();
+            gravityTimer.Tick += gravityTimer_Tick;
+            gravityTimer.Interval = 10;
+            gravityTimer.Start();
+            
+        }
+
+        private void gravityTimer_Tick(object sender, EventArgs e)
+        {
+            vehicle.Top += 10;
+            if (vehicle.Bottom == groundValue)
+            {
+                gravityTimer.Stop();
+            }
+
         }
 
         private void InitializeIfButtonIsClickedTimer()
@@ -117,7 +145,8 @@ namespace HillClimbRacingWithGeneticAlgorithm
             AddGeneticAlgorithm();
 
             //UpdateScoreLabel();
-        
+
+            //Gravity();
         }
 
         private void AddArea()
@@ -130,6 +159,7 @@ namespace HillClimbRacingWithGeneticAlgorithm
         {
             this.Controls.Add(vehicle);
             vehicle.BringToFront();
+            Gravity();
         }
 
         private void AddScore()
