@@ -19,8 +19,8 @@ namespace HillClimbRacingWithGeneticAlgorithm
         private Score score = new Score();
         private GeneticAlgorithm geneticAlgorithm = new GeneticAlgorithm();
         private Button buttonStart = new Button();
-        private Button buttonYes = new Button();
-        private Button buttonNo = new Button();
+        private Button buttonNew = new Button();
+        private Button buttonNext = new Button();
         private bool buttonStartClick = false;
         private Timer ifButtonIsClickedTimer = null;
         private Timer gravityTimer = null;
@@ -176,40 +176,40 @@ namespace HillClimbRacingWithGeneticAlgorithm
         private void InitializeEndPicture()
         {
             endPicture.Visible = true;
-            endPicture.Location = new Point(40, 30);
-            //endPicture.Size = level.Size;
+            endPicture.Location = new Point(0, 0);
+            endPicture.Size = area.Size;
             endPicture.SizeMode = PictureBoxSizeMode.StretchImage;
             endPicture.BringToFront();
-            ButtonYes();
-            ButtonNo();
+            ButtonNew();
+            ButtonNext();
         }
 
-        private void ButtonYes()
+        private void ButtonNew()
         {
-            buttonYes.Parent = endPicture;
-            buttonYes.Size = new Size(80, 40);
-            buttonYes.Location = new Point(120, 300);
-            buttonYes.Visible = true;
-            buttonYes.BringToFront();
+            buttonNew.Parent = endPicture;
+            buttonNew.Size = new Size(80, 40);
+            buttonNew.Location = new Point(120, 300);
+            buttonNew.Visible = true;
+            buttonNew.BringToFront();
         }
 
-        private void ButtonNo()
+        private void ButtonNext()
         {
-            buttonNo.Parent = endPicture;
-            buttonNo.Size = new Size(80, 40);
-            buttonNo.Location = new Point(215, 300);
-            buttonNo.Visible = true;
-            buttonNo.BringToFront();
+            buttonNext.Parent = endPicture;
+            buttonNext.Size = new Size(80, 40);
+            buttonNext.Location = new Point(215, 300);
+            buttonNext.Visible = true;
+            buttonNext.BringToFront();
         }
 
-        private void buttonYes_Click(object sender, EventArgs e)
+        private void buttonNew_Click(object sender, EventArgs e)
         {
             //RestartGame();
         }
 
-        private void buttonNo_Click(object sender, EventArgs e)
+        private void buttonNext_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
         }
     }
 }
