@@ -130,7 +130,7 @@ namespace HillClimbRacingWithGeneticAlgorithm
         private void AddGameElements()
         {
             //add key down event handler
-            //this.KeyDown += Game_KeyDown;
+            this.KeyDown += Game_KeyDown;
 
             //inicialize and add area
             AddArea();
@@ -149,6 +149,21 @@ namespace HillClimbRacingWithGeneticAlgorithm
             //Gravity();
         }
 
+        private void Game_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Right:
+                    vehicle.HorizontalVelocity = vehicle.Step;
+                    vehicle.VerticalVelocity = vehicle.Step - 1;
+                    break;
+                case Keys.Left:
+                    vehicle.HorizontalVelocity = -vehicle.Step;
+                    vehicle.VerticalVelocity = - vehicle.Step + 1;
+                    break;
+            }
+        }
+
         private void AddArea()
         {
             this.Controls.Add(area);
@@ -158,6 +173,8 @@ namespace HillClimbRacingWithGeneticAlgorithm
         private void AddVehicle()
         {
             this.Controls.Add(vehicle);
+            vehicle.Parent = area;
+            //vehicle.BackColor = Color.Transparent;
             vehicle.BringToFront();
             Gravity();
         }
@@ -165,6 +182,7 @@ namespace HillClimbRacingWithGeneticAlgorithm
         private void AddScore()
         {
             this.Controls.Add(score);
+            score.Parent = area;
             score.BringToFront();
         }
 
@@ -210,6 +228,12 @@ namespace HillClimbRacingWithGeneticAlgorithm
         private void buttonNext_Click(object sender, EventArgs e)
         {
             //this.Close();
+        }
+
+        private void MoveVehicle()
+        {
+            //vehicle.Right += vehicle.HorizontalVelocity;
+            vehicle.Left -= vehicle.VerticalVelocity;
         }
     }
 }

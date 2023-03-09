@@ -10,6 +10,10 @@ namespace HillClimbRacingWithGeneticAlgorithm
 {
     public class Vehicle:PictureBox
     {
+        public int Step { get; set; } = 2;
+        public int HorizontalVelocity { get; set; } = 0;
+        public int VerticalVelocity { get; set; } = 0;
+
         public Vehicle()
         {
             InitializeVehicle();
@@ -21,7 +25,7 @@ namespace HillClimbRacingWithGeneticAlgorithm
             this.Image = (Image)Properties.Resources.ResourceManager.GetObject(v);
             this.SizeMode = PictureBoxSizeMode.StretchImage;
             this.Location = new Point(100, 100);
-            this.BackColor = Color.Transparent;
+            //this.BackColor = Color.Transparent;
             this.Name = "Car";
         }
     }
